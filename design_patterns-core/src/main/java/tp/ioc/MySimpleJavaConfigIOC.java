@@ -71,11 +71,7 @@ public class MySimpleJavaConfigIOC {
 			logger.info("dataSource type : " + myDs.getClass().getSimpleName());
 			
 			//3 . injecter les éléments les uns dans les autres
-			// A FAIRE EN TP:
-			// * casting de dao en ProduitDaoJdbc
-			// * appel de la méthode d'injection de dépendance en set....(...)
-			//   spécifique à la classe ProduitDaoJdbc pour associer/relier le composant dataSource en arrière plan 
-			
+			((ProduitDaoJdbc)dao).setDataSource(myDs);
 		}
 		//4. retourner le premier element de la chaine construite
 		return dao;
