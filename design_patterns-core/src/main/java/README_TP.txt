@@ -60,4 +60,31 @@ Deuxième étape du TP3 = coder les parties "A FAIRE en TP" dans les 2 classes s
 Puis effectuer différents tests en SWITCHANT de ligne dao = new ProduitDaoXyz()
 
 
+TP3B : Analyser le code et la configuration IOC en version XML
+==============================================================
+Cette etape du TP vise à  montrer une configuration XML
+possible de l'injection de dépendance (quasiment la même que Spring)
+Partie du code à analyser:
+   - src/main/resources/myIocConfig.xml
+   - nouvelle version de la méthode setUp() de MyAppTestWithIoc
+   - (en diagonale , dans les grandes lignes) : tp.ioc.MyIocBeanConf , tp.ioc.MyIocConfig
+                                                tp.ioc.MyXmlBeanFactory
+                                                
+TP4 (Service et DTO):
+====================
+A faire entièrement (en se basant sur la base du TP3B)
+
+* Service GestionProduits / GestionProduitsImpl avec design pattern "DTO"
+* configurer le service (et l'injction du DAO) dans myIocConfig.xml
+* tester
+
+TP5: Facade pour ensemble de Services
+=====================================
+A faire entièrement (en se basant sur la base du TP3B)
+
+* Coder rapidement le service GestionTva/GestionTvaImpl avec un calcul de Tva avec ht et tauxPct
+* Coder rapidement le service GestionConv/GestionConvUmpl avec euroToFrancs , francToEuros , 6.5597
+* configurer ces nouveau services  dans myIocConfig.xml et tester
+* Coder une facade de services (éventuellement "agnostique vis à vis de IOC/XML") et la tester
+                                               
 

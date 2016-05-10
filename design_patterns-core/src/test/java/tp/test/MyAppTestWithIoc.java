@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import tp.dao.ProduitDao;
 import tp.entity.Produit;
-import tp.ioc.MySimpleJavaConfigIOC;
+import tp.ioc.MyXmlBeanFactory;
 
 public class MyAppTestWithIoc {
 	
@@ -30,8 +30,9 @@ public class MyAppTestWithIoc {
 	
 	@Before
 	public void setUp(){
-		MySimpleJavaConfigIOC mySimpleJavaConfigIOC = MySimpleJavaConfigIOC.getInstance();
-        this.produitDao = mySimpleJavaConfigIOC.createProduitDaoWithSubComponents();
+		MyXmlBeanFactory myXmlIocFactory = MyXmlBeanFactory.getInstance();
+		myXmlIocFactory.initIocConfigFromXmlFile("myIocConfig.xml");
+		this.produitDao = (ProduitDao) myXmlIocFactory.getBean("produitDao");
 	}
 	
 	@After
