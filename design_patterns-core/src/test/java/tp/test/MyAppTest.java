@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 
 import tp.dao.ProduitDao;
 import tp.dao.ProduitDaoFactory;
-import tp.dao.ProduitDaoSimu;
 import tp.entity.Produit;
 
 public class MyAppTest {
@@ -32,11 +31,8 @@ public class MyAppTest {
 	
 	@Before
 	public void setUp(){
-		/* récupérer l'unique instance de "ProduitDaoFactory"
-		 * et s'en servir pour construire le "dao" à tester (en version "Simu" , "Jdbc" ou "Jpa")
-		 */
-		
-        this.produitDao = new ProduitDaoSimu(); //code provisoire (début de Tp)
+		ProduitDaoFactory produitDaoFactory = ProduitDaoFactory.getInstance();
+        this.produitDao = produitDaoFactory.createProduitDao();
 	}
 	
 	@After
@@ -55,15 +51,15 @@ public class MyAppTest {
 	}
 	
 	private void subTestSingleton(){
-		ProduitDaoFactory produitDaoFactory = new ProduitDaoFactory(); //code provisoire à changer en TP (Singleton)
+		ProduitDaoFactory produitDaoFactory = ProduitDaoFactory.getInstance();
 		String data = produitDaoFactory.getCommonData();
-		//Assert.assertTrue(data.equals("my shared data inside singleton"));// test à activer / dé-commenter en TP
+		Assert.assertTrue(data.equals("my shared data inside singleton"));
 	}
 	
 	@Test
 	public void testSingleton(){
 		//ProduitDaoFactory prodDaoFactory = new ProduitDaoFactory(); //impossible si constructeur privé
-		ProduitDaoFactory prodDaoFactory = new ProduitDaoFactory(); //code provisoire à changer en TP (Singleton)
+		ProduitDaoFactory prodDaoFactory = ProduitDaoFactory.getInstance();
 		prodDaoFactory.setCommonData("my shared data inside singleton");
 		subTestSingleton();
 	}

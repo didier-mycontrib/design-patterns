@@ -32,9 +32,6 @@ public class MyParamDataSource implements DataSource {
 		if(password==null) password = props.getProperty("password");
 	}
 	
-	
-	//EN TP : terminer la programmation de la méthode getConnection() issue de l'interface javax.sql.DataSource
-	//        en déplaçant (et adaptant) du code pour l'instant situé dans ProduitDaoJdbc.getSqlConnection()
 	@Override
 	public Connection getConnection() throws SQLException{
 		if(jdbcDriver==null || dbUrl == null || username ==null || password ==null){
@@ -43,7 +40,16 @@ public class MyParamDataSource implements DataSource {
 		}
 		
 		Connection cn=null;
-		//.....................  A adapter ici en TP .............
+		try {
+			Class.forName(jdbcDriver);
+			cn = DriverManager.getConnection(dbUrl,username,password);
+		} catch (ClassNotFoundException e) {
+			logger.error("cannot load jdbc driver class", e);
+			throw new RuntimeException("cannot load jdbc driver class:", e);
+		} catch (SQLException e) {
+			logger.error("cannot connect to database", e);
+			throw new RuntimeException("cannot connect to database:", e);
+		}
 		return cn;
 	}
 	

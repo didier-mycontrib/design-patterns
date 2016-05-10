@@ -1,7 +1,6 @@
 package tp.dao;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +13,7 @@ import javax.sql.DataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import tp.ds.DataSourceFactory;
 import tp.entity.Produit;
 
 public class ProduitDaoJdbc implements ProduitDao {
@@ -23,30 +23,21 @@ public class ProduitDaoJdbc implements ProduitDao {
 	private DataSource dataSource;
 	
 	private void initDataSource(){
-		// a completer en TP (en s'appyant sur DataSourceFactory)
+		if(dataSource==null){
+			dataSource = DataSourceFactory.getInstance().getDataSource();
+		}
 	}
 	
-	//  TP :Méthode getSqlConnection() à ré-écrire / retoucher en profondeur 
-	// (en utilisant initDataSource() et dataSource.getConnection() en interne
-	private Connection getSqlConnection()
-	{
-		String jdbcDriver = "org.h2.Driver"; //"com.mysql.jdbc.Driver";
-		String dbUrl = "jdbc:h2:~/test_designPatterns_db";// ~ means $HOME //"jdbc:mysql://localhost/test_designPatterns_db";
-		String username= "sa" ; //"mydbuser";
-		String password = "" ; //"mypwd";
+	private Connection getSqlConnection(){
 		Connection cn=null;
 		try {
-			Class.forName(jdbcDriver);
-			cn = DriverManager.getConnection(dbUrl,username,password);
-		} catch (ClassNotFoundException e) {
-					logger.error("cannot load jdbc driver class", e);
-		} catch (SQLException e) {
-			        logger.error("cannot connect to database", e);
+			initDataSource();
+			cn = dataSource.getConnection();
+		} catch (Exception e) {
+					logger.error("database connection error", e);
 		}
 		return cn;
 	}
-	
-	
 	
 	private static void closeConnection(Connection cn){
 		try{ cn.close(); } catch(SQLException ex){ }
