@@ -4,7 +4,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.slf4j.LoggerFactory;
+
+import tp.ds.MyParamDataSource;
+
 public class MyPropertiesUtil {
+	
+	private static org.slf4j.Logger logger = LoggerFactory.getLogger(MyPropertiesUtil.class);
 	
 	public static Properties propertiesFromCPRelativePathFile(String relativePathFile)
 	{
@@ -12,8 +18,8 @@ public class MyPropertiesUtil {
 		try {
 			InputStream inStream =  Thread.currentThread().getContextClassLoader().getResourceAsStream(relativePathFile);
 			props.load(inStream);
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			logger.error("cannot load properties file : " + relativePathFile , e.getMessage() );
 		}
 		return props;
 	}
