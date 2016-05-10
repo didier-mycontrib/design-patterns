@@ -29,10 +29,10 @@ public class ProduitDaoJdbc implements ProduitDao {
 	}*/
 	
 	// new version with IOC/injection
-	// A FAIRE EN TP :
-	// * ajouter une méthode d'injection de dépendance : set....() avec param de type interface DataSource
-	// * y ajouter logger.info("dataSource injected in ProduitDaoJdbc : " + dataSource.toString()); ou equivalent
-	
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+		logger.info("dataSource injected in ProduitDaoJdbc : " + dataSource.toString());
+	}
 	
 	private Connection getSqlConnection(){
 		Connection cn=null;

@@ -37,3 +37,27 @@ Les fichiers à modifier (en tenant compte des commentaires) pour le TP2 sont :
 * tp.ds.MyParamDataSource.java
 * tp.dao.ProduitDaoJdbc.java
 
+TP3 IOC / Injection de dépendance simple (en java un peu rigide)
+===============================================================
+La liaison entre le DAO (jdbc ou autre) et le composant "DataSource" en version "Param" ou "Jndi"
+est maintenant gérée par le design pattern injection de dépendance (alias IOC).
+Cette première version simple de "IOC" au niveau du TP3 ressemble un peu à l'esprit "Java Config" de Spring4
+Première étape du TP3 = comprendre la nouvelle structure du code:
+---------------------------------------------------------------
+- certains fichiers de configurations ne sont plus utilisés : 
+   myDB.properties.withoutIoc.txt , produitDao.properties.withoutIoc.txt
+- certaines classes (petites fabriques) ne sont plus utilisées:
+   ProduitDaoFactory.java.withoutIoc.txt , DataSourceFactory.java.withoutIoc.txt
+- la classe MyParamDataSource n'analyse plus en direct myDB.properties
+- la classe ProduitDaoJdbc n'initialise plus le dataSource via DataSourceFactory
+- la nouvelle classe MySimpleJavaConfigIOC est au coeur de la nouvelle structure/configuration.
+   
+
+Deuxième étape du TP3 = coder les parties "A FAIRE en TP" dans les 2 classes suivantes:
+-------------------------------------------------------------------------------------
+* tp.dao.ProduitDaoJdbc
+* tp.ioc.MySimpleJavaConfigIOC
+Puis effectuer différents tests en SWITCHANT de ligne dao = new ProduitDaoXyz()
+
+
+

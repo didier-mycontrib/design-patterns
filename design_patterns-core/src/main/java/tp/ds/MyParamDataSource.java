@@ -23,6 +23,8 @@ public class MyParamDataSource implements DataSource {
 	private String username; // "root" ou "sa" ou ...
 	private String password;// "root" ou "" ou "formation" ou ...
 	
+	/*
+	// in old version (without ioc) only:
 	private void initDbProperties(){
 		Properties props= MyPropertiesUtil.propertiesFromCPRelativePathFile("myDB.properties");
 		logger.info("database properties extracted from myDB.properties if not already setted");
@@ -31,13 +33,17 @@ public class MyParamDataSource implements DataSource {
 		if(username==null) username = props.getProperty("username");
 		if(password==null) password = props.getProperty("password");
 	}
+	*/
 	
 	@Override
 	public Connection getConnection() throws SQLException{
+		/*
+		// in old version (without ioc) only:
 		if(jdbcDriver==null || dbUrl == null || username ==null || password ==null){
 		    initDbProperties();
 		    logger.info("jdbcDriver="+jdbcDriver + " dbUrl="+dbUrl + " username=" + username + " password=" + password);
 		}
+		*/
 		
 		Connection cn=null;
 		try {
