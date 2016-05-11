@@ -42,15 +42,12 @@ public class MyAppFacadeTest {
 	
 	@Test
 	public void testServiceViaFacade(){      
-		double sommeFrancs = 0; // .... REMPLACER 0 par un appel de euroToFrancs(15.0) 
-		                        //en passant par la facade et le service gestionConversion
+		double sommeFrancs = myFacade.getGestionConversion().euroToFrancs(15);
 		System.out.println("15 euros : " + sommeFrancs + " francs");
-		double sommeTva = 0; //.... REMPLACER 0 par un appel de getTva(20.0 , 200) 
-		                     //en passant par la facade et le service gestionTva
+		double sommeTva = myFacade.getGestionTva().getTva(20.0 , 200);
 		System.out.println("TVA (20.0) pour 200 Euros ==>" + sommeTva);
 		
-		ProduitDto prodDto = null;//.... REMPLACER null par un appel de getProduitByRef("1") 
-		                         // en passant par la facade et le service gestionProduits
+		ProduitDto prodDto = myFacade.getGestionProduits().getProduitByRef("1");
 		System.out.println("prodDto:" + prodDto);
 	}
 

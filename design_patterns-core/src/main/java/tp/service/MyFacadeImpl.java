@@ -32,8 +32,8 @@ public class MyFacadeImpl implements MyFacade {
 		MyXmlBeanFactory myXmlIocFactory = MyXmlBeanFactory.getInstance();
 		myXmlIocFactory.initIocConfigFromXmlFile("myIocConfig.xml");
 		this.gestionConversion = (GestionConversion) myXmlIocFactory.getBean("serviceGestionConversion");
-		//this.gestionTva = ..............
-		//this.gestionProduits = ..............
+		this.gestionTva = (GestionTva) myXmlIocFactory.getBean("serviceGestionTva");
+		this.gestionProduits = (GestionProduits) myXmlIocFactory.getBean("serviceGestionProduits");
 		logger.info("facade initialisee avec services gestionConversion , gestionTva et gestionProduits");
 	}
 	
@@ -43,11 +43,19 @@ public class MyFacadeImpl implements MyFacade {
 	}
 
 	public GestionConversion getGestionConversion() {
-		return null; // ...........;
+		return gestionConversion;
 	}
 
 	public GestionTva getGestionTva() {
-		return null; // .............;
+		return gestionTva;
+	}
+    /*
+	public void setGestionConversion(GestionConversion gestionConversion) {
+		this.gestionConversion = gestionConversion;
+	}
+
+	public void setGestionTva(GestionTva gestionTva) {
+		this.gestionTva = gestionTva;
 	}
     /*
 	public void setGestionConversion(GestionConversion gestionConversion) {
