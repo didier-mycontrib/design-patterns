@@ -46,6 +46,19 @@ public class MyAppServiceTestWithIoc {
         Assert.assertNotNull(prodDto);
         Assert.assertTrue(prodDto.getReference().equals("1"));
         logger.info("ref=1 --> prodDto : " + prodDto);
+        
+        double ancien_prix =prodDto.getPrix();
+        double nouveau_prix =ancien_prix*1.1; //augmentation de 10%
+        prodDto.setPrix(nouveau_prix);
+        this.serviceProduits.updateProduitViaDto(prodDto);
+        
+        //relecture pour vérifier la mise à jour
+        ProduitDto prodDtoRelu = this.serviceProduits.getProduitByRef("1");
+        logger.info("ref=1 --> prodDto apres augmentation de 10% : " + prodDto);
+        Assert.assertEquals(nouveau_prix, prodDtoRelu.getPrix(), 0.0001);
+        
+        
+        
 	}
 
 }

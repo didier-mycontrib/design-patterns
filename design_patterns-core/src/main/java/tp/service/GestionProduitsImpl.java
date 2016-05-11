@@ -46,4 +46,12 @@ public class GestionProduitsImpl implements GestionProduits {
 		this.produitDao.cleanUpResources();
 	}
 
+
+	@Override
+	public void updateProduitViaDto(ProduitDto p) {
+		//conversion DTO-->Entity via constructeur
+		Produit prod = new Produit(Long.parseLong(p.getReference()),p.getLabel(),p.getPrix()) ;
+		this.produitDao.updateProduit(prod);
+	}
+
 }
