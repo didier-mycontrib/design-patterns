@@ -72,19 +72,26 @@ Partie du code à analyser:
                                                 
 TP4 (Service et DTO):
 ====================
-A faire entièrement (en se basant sur la base du TP3B)
+A faire en se basant sur la base du TP4_debut
 
-* Service GestionProduits / GestionProduitsImpl avec design pattern "DTO"
-* configurer le service (et l'injction du DAO) dans myIocConfig.xml
+* Analyser le code (déjà écrit)  
+    - de la nouvelle classe tp.dto.ProduitDto
+    - du Service tp.service.GestionProduits / GestionProduitsImpl 
+* configurer le service (et l'injection du DAO) dans myIocConfig.xml
 * tester
+
+Suite facultative pour tp 4:
+ - ajouter une méthode public void updateProduitViaDto(ProduitDto p)
+   au sein du service , la programmer et la tester
 
 TP5: Facade pour ensemble de Services
 =====================================
-A faire entièrement (en se basant sur la base du TP3B)
+A faire en se basant sur la base du TP5_debut
 
-* Coder rapidement le service GestionTva/GestionTvaImpl avec un calcul de Tva avec ht et tauxPct
-* Coder rapidement le service GestionConv/GestionConvUmpl avec euroToFrancs , francToEuros , 6.5597
-* configurer ces nouveau services  dans myIocConfig.xml et tester
+* Analyser le code des services élémentaires suivants:
+   - GestionTva/GestionTvaImpl avec un calcul de Tva avec ht et tauxPct
+   - GestionConv/GestionConvUmpl avec euroToFrancs , francToEuros , 6.5597
+* configurer ces nouveaux services  dans myIocConfig.xml et (idéalement) les tester
 * Coder une facade de services (éventuellement "agnostique vis à vis de IOC/XML") et la tester
                                                
 

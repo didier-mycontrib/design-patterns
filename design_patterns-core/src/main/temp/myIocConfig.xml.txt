@@ -16,8 +16,7 @@
 </bean>
 -->
 
-<!--  A faire en TP : un bloc bean pour tp.dao.ProduitDaoJpa avec nouvel id  -->
-<bean id=".....Jpa" class="....">
+<bean id="produitDaoJpa" class="tp.dao.ProduitDaoJpa">
 </bean>
 
 
@@ -25,14 +24,9 @@
     <property name="dataSource" ref="myDs" />
 </bean>
 
-<!--  A faire en TP : un bloc bean pour tp.service.GestionProduitsImpl
-      avec une sous balise property permettant d'injecter le
-      dao référencé par l'id "...." ou "...Jpa" via la méthode d'injection
-      setProduitDao() et correspondant à name="produitDao" 
-      (sans le set ni Majuscule) -->
-<bean id="serviceGestionProduits" class="...........">
-    <property name="......" ref="......" /> 
-    <!-- <property name="....." ref="....Jpa" /> -->
+<bean id="serviceGestionProduits" class="tp.service.GestionProduitsImpl">
+    <property name="produitDao" ref="produitDao" /> 
+    <!-- <property name="produitDao" ref="produitDaoJpa" /> -->
 </bean>
 
 
