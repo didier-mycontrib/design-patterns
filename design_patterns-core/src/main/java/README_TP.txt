@@ -91,7 +91,9 @@ A faire en se basant sur la base du TP5_debut
 * Analyser le code des services élémentaires suivants:
    - GestionTva/GestionTvaImpl avec un calcul de Tva avec ht et tauxPct
    - GestionConv/GestionConvUmpl avec euroToFrancs , francToEuros , 6.5597
-* configurer ces nouveaux services  dans myIocConfig.xml et (idéalement) les tester
+* Analyser la configuration de ces nouveaux services  dans myIocConfig.xml 
 * Coder une facade de services (éventuellement "agnostique vis à vis de IOC/XML") et la tester
+  Concrètement : terminer la programmation des classes tp.services.MyFacadeImpl
+                                                    et tp.test.MyAppFacadeTest
                                                
 
