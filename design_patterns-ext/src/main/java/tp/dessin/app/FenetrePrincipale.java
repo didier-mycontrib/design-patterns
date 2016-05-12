@@ -13,6 +13,7 @@ public class FenetrePrincipale extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	private OngletDessin ongletDessin= new OngletDessin();
+	private OngletObservateurs ongletObservateur = new OngletObservateurs();
 	
 	//constructeur par defaut
 	public FenetrePrincipale(){
@@ -58,6 +59,7 @@ public class FenetrePrincipale extends JFrame{
 	    
 	   
 	    serieOnglet.addTab("dessin",ongletDessin);
+	    serieOnglet.addTab("observateurs",ongletObservateur);
 	    
 	}
 	

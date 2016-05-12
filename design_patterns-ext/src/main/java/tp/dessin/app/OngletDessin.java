@@ -46,11 +46,10 @@ public class OngletDessin extends JPanel{
 	
 	private JPanel panneauHaut = new JPanel();
 	private MyCanvas panneauBas = new MyCanvas();
-	private JRadioButton rbLigne = 
-		      new JRadioButton("ligne");
+	private JRadioButton rbLigne =   new JRadioButton("ligne");
 	private JRadioButton rbRectangle = new JRadioButton("rectangle");
 	private JRadioButton rbCercle = new JRadioButton("cercle");
-	private JComboBox comboCouleur = new JComboBox();
+	private JComboBox<String> comboCouleur = new JComboBox<String>();
 	private JButton btnEffacer = new JButton("effacer");
 	
 	public OngletDessin(){
