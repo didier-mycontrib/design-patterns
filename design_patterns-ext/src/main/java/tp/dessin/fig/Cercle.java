@@ -11,6 +11,15 @@ public class Cercle extends Figure{
 
 
 	
+	public Cercle(int xc, int yc, int rayon) {
+		super();
+		this.xc = xc;
+		this.yc = yc;
+		this.rayon = rayon;
+	}
+
+
+
 	public int getXc() {
 		return xc;
 	}
@@ -45,5 +54,24 @@ public class Cercle extends Figure{
 	public void performVisit(AbstractFigVisitor figVisitor) {
 		figVisitor.doActionForCercle(this);		
 	}
+
+
+
+	@Override
+	public void translate(int dx, int dy) {
+		this.xc+=dx;
+		this.yc+=dy;
+	}
+
+
+
+	@Override
+	public void resize(double coeff) {
+		this.rayon=(int)((double) this.rayon * coeff);
+	}
 	
+	@Override
+	public void setOrigin(int x, int y) {
+		this.xc=x;this.yc=y;
+	}
 }
