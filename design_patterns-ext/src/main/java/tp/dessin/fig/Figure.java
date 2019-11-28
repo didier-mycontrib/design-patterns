@@ -3,35 +3,58 @@ package tp.dessin.fig;
 import java.awt.Color;
 import java.io.Serializable;
 
-public abstract class  Figure implements Serializable{
+public abstract class  Figure implements Serializable , Cloneable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private Color couleur;
+	private String couleur;
+	private static Figure selectedFig = null;
 	
 	public enum TypeFigure { LIGNE , RECTANGLE, CERCLE , AUTRE };
 	
+	
 	public Figure(){
-		couleur=Color.BLACK;//couleur par defaut
+		couleur="black";//couleur par defaut
+	}
+	
+	@Override
+	public Figure clone() throws CloneNotSupportedException {   
+		return (Figure)super.clone();
+	} 
+	
+	
+	public Figure cloneFig() {
+		Figure f =null;
+		try {
+			f=(Figure) this.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		}
+		return f;
 	}
 
+	abstract public void translate(int dx,int dy);
+	abstract public void resize(double coeff);
+	abstract public void setOrigin(int x,int y);
+	
 	abstract public void performVisit(AbstractFigVisitor figVisitor);
 
-	public Color getCouleur() {
+	public String getCouleur() {
 		return couleur;
 	}
 
-	public void setCouleur(Color couleur) {
+	public void setCouleur(String couleur) {
 		this.couleur = couleur;
 	}
 
-	
-	public String getColorAsString(){
-		if(couleur.equals(Color.RED)) return "red";
-		if(couleur.equals(Color.GREEN)) return "green";
-		if(couleur.equals(Color.BLUE)) return "blue";
-		if(couleur.equals(Color.YELLOW)) return "yellow";
-		else return "black";
+
+
+	public static Figure getSelectedFig() {
+		return selectedFig;
+	}
+
+	public static void setSelectedFig(Figure selectedFig) {
+		Figure.selectedFig = selectedFig;
 	}
 	
 

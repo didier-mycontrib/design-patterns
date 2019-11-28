@@ -1,4 +1,4 @@
-package tp.dessin.app;
+package tp.dessin.app.v1;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -24,6 +24,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import tp.dessin.app.MyCanvas;
 import tp.dessin.ext.svg.SvgGenerateVisitor;
 import tp.dessin.ext.swing.SwingDrawingVisitor;
 import tp.dessin.fig.Cercle;
@@ -42,7 +43,7 @@ public class OngletDessin extends JPanel{
 	private Figure.TypeFigure typefigCourante 
 	                  = Figure.TypeFigure.LIGNE;
 	
-	private Color couleurCourante = Color.BLACK;
+	private String couleurCourante = "black"; 
 	
 	private JPanel panneauHaut = new JPanel();
 	private MyCanvas panneauBas = new MyCanvas();
@@ -86,10 +87,12 @@ public class OngletDessin extends JPanel{
 	   rbCercle.addActionListener(al);
 	   
 	   panneauHaut.add(comboCouleur);
-	   comboCouleur.addItem("noir");
-	   comboCouleur.addItem("rouge");
-	   comboCouleur.addItem("vert");
-	   comboCouleur.addItem("bleu");
+	   comboCouleur.addItem("black");
+	   comboCouleur.addItem("red");
+	   comboCouleur.addItem("green");
+	   comboCouleur.addItem("blue");
+	   comboCouleur.addItem("orange");
+	   comboCouleur.addItem("yellow");
 	   
 	   comboCouleur.addItemListener(new ItemListener(){
 		public void itemStateChanged(ItemEvent e) {
@@ -114,17 +117,15 @@ public class OngletDessin extends JPanel{
 		switch(this.typefigCourante){
 		case LIGNE:
 			Ligne l =new Ligne();
-			l.setX1(e.getX());l.setY1(e.getY());
 			this.figureCourante=l;	break;
 		case RECTANGLE:
 			Rectangle r =new Rectangle();
-			r.setX1(e.getX());r.setY1(e.getY());
 			this.figureCourante=r;	break;
 		case CERCLE:
 			Cercle c =new Cercle();
-			c.setXc(e.getX());c.setYc(e.getY());
 			this.figureCourante=c;	break;			
-		}			
+		}	
+		figureCourante.setOrigin(e.getX(), e.getY());
 	}
 	
 	void panneauBas_mouseReleased(MouseEvent e){
@@ -168,15 +169,7 @@ public class OngletDessin extends JPanel{
 		if(e.getStateChange()==ItemEvent.SELECTED){
 		  String couleurChoisie = (String)e.getItem();
 		  //System.out.println("couleur choisie="+couleurChoisie);
-		  if(couleurChoisie.equals("noir")) 
-			  couleurCourante=Color.BLACK;
-		  else if(couleurChoisie.equals("bleu")) 
-			  couleurCourante=Color.BLUE;
-		  else if(couleurChoisie.equals("rouge")) 
-			  couleurCourante=Color.RED;
-		  else if(couleurChoisie.equals("vert")) 
-			  couleurCourante=Color.GREEN;
-			  
+		  couleurCourante=couleurChoisie;
 		}
 	}
 	
@@ -229,8 +222,9 @@ public class OngletDessin extends JPanel{
 	
 	public void exporterSvg(){
 		try {
-			FileOutputStream of = new FileOutputStream(
-					"c:\\temp\\figures.svg");
+			//String defaultFileName="c:\\temp\\figures.svg";
+			String defaultFileName="figures.svg"; //+refresh eclipse ou ...
+			FileOutputStream of = new FileOutputStream(defaultFileName);
 			PrintStream ps = new PrintStream(of);
 			ps.println("<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>");
 			

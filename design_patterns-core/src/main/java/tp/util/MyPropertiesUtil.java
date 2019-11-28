@@ -1,12 +1,9 @@
 package tp.util;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
 import org.slf4j.LoggerFactory;
-
-import tp.ds.MyParamDataSource;
 
 public class MyPropertiesUtil {
 	
