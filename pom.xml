@@ -21,5 +21,6 @@
    	<module>dp-core-phase1</module>
    	<module>dp-core-phase2</module>
    	<module>dp-core-phase3</module>
+   	<module>other-patterns</module>
    </modules>
 </project>
