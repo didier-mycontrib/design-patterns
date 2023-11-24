@@ -14,30 +14,24 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import tp.entity.Produit;
+import tp.ioc.annot.MyInject;
 
 public class ProduitDaoJdbc implements ProduitDao {
 	
 	private static Logger logger = LoggerFactory.getLogger(ProduitDaoJdbc.class);
 	
+	@MyInject
 	private DataSource dataSource;
 	
-	/*// old version without IOC/injection
-	private void initDataSource(){
-		if(dataSource==null){
-			dataSource = DataSourceFactory.getInstance().getDataSource();
-		}
-	}*/
+
+	//plus de initDataSource() utilisant DataSourceFactory
+	//mais injection de dépendance sur partie DataSource
+
 	
-	// new version with IOC/injection
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-		logger.info("dataSource injected in ProduitDaoJdbc : " + dataSource.toString());
-	}
 	
 	private Connection getSqlConnection(){
 		Connection cn=null;
 		try {
-			/*initDataSource(); //for old version only (without ioc)*/
 			cn = dataSource.getConnection();
 		} catch (Exception e) {
 					logger.error("database connection error", e);

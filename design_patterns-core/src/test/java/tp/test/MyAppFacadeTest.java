@@ -1,15 +1,13 @@
 package tp.test;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import tp.dto.ProduitDto;
-import tp.ioc.MyXmlBeanFactory;
-import tp.service.GestionProduits;
 import tp.service.MyFacade;
 import tp.service.MyFacadeImpl;
 
@@ -28,12 +26,12 @@ public class MyAppFacadeTest {
 		//System.exit(0);
 	}
 	
-	@Before
+	@BeforeEach
 	public void setUp(){
 		myFacade = MyFacadeImpl.getInstance();
 	}
 	
-	@After
+	@AfterEach
 	public void clean(){
 	    this.myFacade.cleanUpResources();// ou équivalent sur vrai projet 
 		//(avec fermeture du contexte Spring par exemple)

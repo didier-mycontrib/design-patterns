@@ -9,7 +9,7 @@ import tp.dto.ProduitDto;
 public interface GestionProduits {
 	
 	public ProduitDto getProduitByRef(String ref);
-	//+ autres méthodes (avec plus du temps pour tout programmer)
+	//+ autres méthodes (avec plus de temps pour tout programmer)
 	public void updateProduitViaDto(ProduitDto p);
 	
 	public void cleanUpResources(); //si nécessaire (librérer ressources internes)

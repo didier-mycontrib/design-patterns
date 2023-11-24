@@ -55,7 +55,8 @@ public class ProduitDaoJpa implements ProduitDao {
 
 	public void cleanUpResources(){
 		logger.info("close entityManagerFactory");
-		emf.close(); //idéalement entityManagerFactory.close(); en fin d'execution de l'application
+		if(emf!=null)
+		  emf.close(); //idéalement entityManagerFactory.close(); en fin d'execution de l'application
 	}
 	
 	

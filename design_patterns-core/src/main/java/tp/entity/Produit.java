@@ -16,7 +16,7 @@ public class Produit {
 	
 	@Id
 	@Column(name="ref")
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long reference;
 	
 	@Column(name="designation")

@@ -3,7 +3,7 @@ package tp.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import tp.ioc.MyXmlBeanFactory;
+import tp.ioc.MyIocBeanFactory;
 
 public class MyFacadeImpl implements MyFacade {
 	
@@ -28,12 +28,19 @@ public class MyFacadeImpl implements MyFacade {
 		//En version "Agnostique", une façade cache entièrement la technologie
 		// "Spring" , "CDI" ou "IOC maison" qui prend en charge les composants
 		//derrière la façade
-		
+		/*
+		//old version:
 		MyXmlBeanFactory myXmlIocFactory = MyXmlBeanFactory.getInstance();
 		myXmlIocFactory.initIocConfigFromXmlFile("myIocConfig.xml");
 		this.gestionConversion = (GestionConversion) myXmlIocFactory.getBean("serviceGestionConversion");
 		this.gestionTva = (GestionTva) myXmlIocFactory.getBean("serviceGestionTva");
 		this.gestionProduits = (GestionProduits) myXmlIocFactory.getBean("serviceGestionProduits");
+		*/
+		MyIocBeanFactory myIocFactory = MyIocBeanFactory.getInstance();
+		this.gestionConversion = myIocFactory.getBean(GestionConversion.class);
+		this.gestionTva = myIocFactory.getBean(GestionTva.class);
+		this.gestionProduits = myIocFactory.getBean(GestionProduits.class);
+		
 		logger.info("facade initialisee avec services gestionConversion , gestionTva et gestionProduits");
 	}
 	

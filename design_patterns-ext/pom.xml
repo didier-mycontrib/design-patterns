@@ -9,33 +9,18 @@
   
   <dependencies>
   
-  		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-			<version>4.12</version>
-		</dependency>
-		
+  	<dependency>
+	    <groupId>org.junit.jupiter</groupId>
+	    <artifactId>junit-jupiter</artifactId>
+	    <version>5.9.3</version>
+	    <scope>test</scope>
+	</dependency>
 		
 		<dependency>
-       	 <groupId>org.slf4j</groupId>
-       	 <artifactId>slf4j-api</artifactId>
-       	 <version>1.7.20</version>
-      	  <scope>compile</scope>
-    	</dependency>
-    	
-    	<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.1.7</version>
-		</dependency>
-		<!-- logback-classic is now better than log4J .
-    	     it's the defaut (native)  SLF4J implementation
-    	     (and used by default with spring-boot) 
-    	     
-    	     Configuration file is src/main/resources/logback.xml (used if logback-test.xml not found)
-    	                       and src/test/resources/logback-test.xml (not stored in built artifact)
-    	     -->
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.15.0</version>
+     </dependency>
    </dependencies>
   
 </project>
