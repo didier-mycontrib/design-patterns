@@ -1,5 +1,6 @@
 package tp.dessin.observateur;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Observable;
@@ -16,8 +17,8 @@ public class PanelObserver2 extends JPanel implements Observer{
 	private SubjectWithCommonData subjectWithCommonData;
 
 	private static final long serialVersionUID = 1L;
-	
-	private JTextField txtCouleur = new JTextField("black");
+	int nbColSize=12;
+	private JTextField txtCouleur = new JTextField("black",nbColSize);
 	private JButton btnCouleur = new JButton("update color");
 	
 	public PanelObserver2(){
