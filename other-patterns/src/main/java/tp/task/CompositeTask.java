@@ -18,9 +18,12 @@ public class CompositeTask implements Task{
 	}
 	
 	@Override
-	public void execute() {
+	public List<Object> execute(Object ...args) {
+		List<Object> allSubTaskResults = new ArrayList<>();
 		for(Task subTask : subTasks) {
-			subTask.execute();
+			//allSubTaskResults.add(subTask.execute(args));
+			allSubTaskResults.addAll(subTask.execute(args));
 		}
+		return allSubTaskResults;
 	}
 }

@@ -9,9 +9,12 @@ public class FigurineHomme extends AbstractFigurine {
 	//xBase et yBase = coin en haut à gauche
 	
 	@Override
-    public void dessinerCorps(Graphics g, int xBase, int yBase){
+    public void dessinerResteDuCorps(Graphics g, int xBase, int yBase,boolean filled){
     	int height = Figurine.HEIGHT/2;
-		g.fillRect(xBase, yBase+height, Figurine.WIDTH, height);
+    	if(filled)
+		   g.fillRect(xBase, yBase+height, Figurine.WIDTH, height);
+    	else
+    	   g.drawRect(xBase, yBase+height, Figurine.WIDTH, height);
 	}
 	
 

@@ -23,7 +23,7 @@ public class MyParamDataSource implements DataSource {
 	private String username; // "root" ou "sa" ou ...
 	private String password;// "root" ou "" ou "formation" ou ...
 	
-	public void initDbProperties(){
+	private void initDbProperties(){
 		Properties props= MyPropertiesUtil.propertiesFromCPRelativePathFile("myDB.properties");
 		logger.info("database properties extracted from myDB.properties if not already setted");
 		if(jdbcDriver==null) jdbcDriver = props.getProperty("jdbcDriver");

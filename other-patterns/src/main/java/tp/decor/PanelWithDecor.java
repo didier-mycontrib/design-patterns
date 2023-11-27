@@ -11,39 +11,46 @@ public class PanelWithDecor extends JPanel {
 		
 	}
 	
-	private Color colorFromIndex(int index) {
-		int indexModulo8 = index%8;
-		switch(indexModulo8){
-			case 0 : return Color.BLUE;
-			case 1 : return Color.RED;
-			case 2 : return Color.GREEN;
-			case 3 : return Color.YELLOW;
-			case 4 : return Color.MAGENTA;
-			case 5 : return Color.GRAY;
-			case 6 : return Color.ORANGE;
-			case 7:
-			default: return Color.BLACK;
+	
+	public void genererDecor(Graphics g) {
+		int nbCol=16;
+		int nbRow=3;
+		int spaceDelta=3;
+		int colorIndex=0;
+		FigurineInPoolFactory figurineInPoolFactory = FigurineInPoolFactory.getInstance();
+		boolean filled=true;
+		for(int i=0;i<nbRow;i++) {
+			int yPos= 10 + i*(Figurine.HEIGHT+spaceDelta);
+			
+			for(int j=0;j<nbCol;j++) {
+				Figurine decorPart = figurineInPoolFactory.getFigurineObject(j);
+				int xPos= 10 + j*(Figurine.WIDTH+spaceDelta);
+				colorIndex++;
+				decorPart.draw(g, xPos, yPos, MyColorUtil.colorFromIndex(colorIndex),filled);
+				filled=!filled;//for next loop
+			}
 		}
 	}
 	
-	public void genererDecor(Graphics g) {
-		int nbCol=10;
+	public void genererDecorAvecMemento(Graphics g) {
+		int deltaYavecMemento=4*Figurine.HEIGHT;
+		int nbCol=16;
 		int nbRow=3;
 		int spaceDelta=3;
 		FigurineInPoolFactory figurineInPoolFactory = FigurineInPoolFactory.getInstance();
-		
-		for(int i=0;i<nbCol;i++) {
+		for(int i=0;i<nbRow;i++) {
 			Figurine decorPart = figurineInPoolFactory.getFigurineObject(i);
-			int xPos= 10 + i*(Figurine.WIDTH+spaceDelta);
-			for(int j=0;j<nbRow;j++) {
-				int yPos= 10 + j*(Figurine.HEIGHT+spaceDelta);
-				decorPart.draw(g, xPos, yPos, colorFromIndex(i+j));
+			int yPos= 10 + i*(Figurine.HEIGHT+spaceDelta)+ deltaYavecMemento;
+			for(int j=0;j<nbCol;j++) {
+				int xPos= 10 + j*(Figurine.WIDTH+spaceDelta);
+				decorPart.drawNext(g, xPos, yPos);
 			}
 		}
 	}
 	
 	public void paint(Graphics g) {
 		genererDecor(g);
+		genererDecorAvecMemento(g);
 	}
 
 }

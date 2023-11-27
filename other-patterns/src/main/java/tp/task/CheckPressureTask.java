@@ -1,10 +1,14 @@
 package tp.task;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class CheckPressureTask implements Task{
 
-	@Override
-	public void execute() {
-		System.out.println("check pressure ...");	
-	}
+	
+	public List<Object> execute(Object ...args) {
+		System.out.println("... checking pressure ...");
+		return Arrays.asList("pressure checked");
+	};
 
 }

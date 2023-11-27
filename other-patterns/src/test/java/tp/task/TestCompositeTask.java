@@ -1,5 +1,7 @@
 package tp.task;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 public class TestCompositeTask {
@@ -10,7 +12,8 @@ public class TestCompositeTask {
 		Task checkListTask = new CompositeTask(new CheckPressureTask(),
 				                               new CheckTemperatureTask());
 		Task allTasks = new CompositeTask(checkListTask,new PrepareCoffeeTask());
-		allTasks.execute();
+		List<Object> taskResults = allTasks.execute();
+		System.out.println("taskResults="+taskResults);
 	}
 
 }

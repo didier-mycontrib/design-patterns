@@ -9,11 +9,14 @@ public class FigurineFemme extends AbstractFigurine {
 	//en triangle pour femme , xBase et yBase = coin en haut à gauche
 	
 	@Override
-    public void dessinerCorps(Graphics g, int xBase, int yBase){
+    public void dessinerResteDuCorps(Graphics g, int xBase, int yBase,boolean filled){
     	int height = Figurine.HEIGHT/2;
 	    int[] xPoints = { xBase+Figurine.WIDTH/2 , xBase , xBase+Figurine.WIDTH };
 		int[] yPoints = { yBase+height , yBase+2*height , yBase+2*height};
-		g.fillPolygon(xPoints, yPoints, 3);
+		if(filled)
+		  g.fillPolygon(xPoints, yPoints, 3);
+		else
+		  g.drawPolygon(xPoints, yPoints, 3);
 	}
 
 
