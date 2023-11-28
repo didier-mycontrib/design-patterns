@@ -5,7 +5,6 @@ import org.apache.commons.beanutils.BeanUtils;
 import tp.dao.ProduitDao;
 import tp.dto.ProduitDto;
 import tp.entity.Produit;
-import tp.ioc.annot.MyInject;
 
 /*
  * Classe d'implémentation locale du service métier "GestionProduits"
@@ -17,7 +16,6 @@ import tp.ioc.annot.MyInject;
 public class GestionProduitsImpl implements GestionProduits {
 
 
-	@MyInject
 	private ProduitDao produitDao=null;
 	
 	

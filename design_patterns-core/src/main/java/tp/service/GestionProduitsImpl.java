@@ -20,6 +20,15 @@ public class GestionProduitsImpl implements GestionProduits {
 	@MyInject
 	private ProduitDao produitDao=null;
 	
+	//injection/liaison par constructeur
+	public GestionProduitsImpl(ProduitDao produitDao) {
+			this.produitDao = produitDao;
+		}
+		
+	public GestionProduitsImpl() {
+			this(null);
+		}
+	
 	// methode pour eventuelle injection explicite
 	public void setProduitDao(ProduitDao produitDao) {
 		this.produitDao = produitDao;

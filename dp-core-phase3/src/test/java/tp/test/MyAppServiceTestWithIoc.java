@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import tp.dto.ProduitDto;
-import tp.ioc.MyStaticIocBeanFactory;
+import tp.ioc.MyIocBeanFactory;
 import tp.service.GestionProduits;
 
 public class MyAppServiceTestWithIoc {
@@ -38,8 +38,8 @@ public class MyAppServiceTestWithIoc {
 		this.serviceProduits = (GestionProduits) myXmlIocFactory.getBean("serviceGestionProduits");
 		*/
 		
-		//MyIocBeanFactory myIocFactory = MyIocBeanFactory.getInstance();
-		MyStaticIocBeanFactory myIocFactory = MyStaticIocBeanFactory.getInstance();
+		MyIocBeanFactory myIocFactory = MyIocBeanFactory.getInstance();
+		//MyStaticIocBeanFactory myIocFactory = MyStaticIocBeanFactory.getInstance();
 		this.serviceProduits = myIocFactory.getBean(GestionProduits.class);
 	}
 	

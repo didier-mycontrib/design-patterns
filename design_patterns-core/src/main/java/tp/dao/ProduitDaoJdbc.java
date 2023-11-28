@@ -27,6 +27,15 @@ public class ProduitDaoJdbc implements ProduitDao {
 	//plus de initDataSource() utilisant DataSourceFactory
 	//mais injection de dépendance sur partie DataSource
 
+	//injection par constructeur
+	public ProduitDaoJdbc(DataSource dataSource) {
+			super();
+			this.dataSource = dataSource;
+		}
+		
+	public ProduitDaoJdbc() {
+			this(null);
+		}
 	
 	
 	private Connection getSqlConnection(){

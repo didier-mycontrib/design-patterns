@@ -39,6 +39,7 @@ public class MyAppServiceTestWithIoc {
 		*/
 		
 		MyIocBeanFactory myIocFactory = MyIocBeanFactory.getInstance();
+		//MyStaticIocBeanFactory myIocFactory = MyStaticIocBeanFactory.getInstance();
 		this.serviceProduits = myIocFactory.getBean(GestionProduits.class);
 	}
 	
