@@ -13,6 +13,9 @@ TemplateMethod : tp.decor.AbstractFigurine.draw()
                  et .dessinerResteDuCorps() sur  AbstractFigurine , FigurineHomme , FigurineFemme           
 
 Mediator : tp.mediator.RetransmitterMediator , tp.mediator.TestMediator
+           tp.mediator2...
+           
+Bridge : tp.bridge           
 
 State  : tp.phone.SmartPhone.alertUser() deleguant à 
          tp.phone.state.PhoneAlertState.alert()
