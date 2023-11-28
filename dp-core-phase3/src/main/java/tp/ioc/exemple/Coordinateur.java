@@ -6,6 +6,7 @@ public class Coordinateur {
 	
 	//@MyInject("MonAfficheurV1")
 	@MyInject("MonAfficheurV2")
+	//@Autowired @Qualifier("MonAfficheurV2") en vrai Spring
 	private MonAfficheur monAfficheur=null; //référence vers afficheur à injecter
 	
 	@MyInject("MonCalculateurCarre")

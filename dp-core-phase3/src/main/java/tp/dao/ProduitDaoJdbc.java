@@ -23,6 +23,17 @@ public class ProduitDaoJdbc implements ProduitDao {
 	@MyInject
 	private DataSource dataSource;
 	
+	
+	
+    //injection par constructeur
+	public ProduitDaoJdbc(DataSource dataSource) {
+		super();
+		this.dataSource = dataSource;
+	}
+	
+	public ProduitDaoJdbc() {
+		this(null);
+	}
 
 	//plus de initDataSource() utilisant DataSourceFactory
 	//mais injection de dépendance sur partie DataSource
