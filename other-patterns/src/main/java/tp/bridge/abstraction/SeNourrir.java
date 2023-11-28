@@ -1,5 +1,5 @@
 package tp.bridge.abstraction;
 
-public interface SeNourrir {
+public class SeNourrir {
 
 }

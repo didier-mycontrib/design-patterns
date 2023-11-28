@@ -1,5 +1,5 @@
 package tp.bridge.abstraction;
 
-public interface Travailler {
+public class Travailler {
 
 }
