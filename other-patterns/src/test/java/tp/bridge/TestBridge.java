@@ -21,6 +21,8 @@ public class TestBridge {
 		
 		Occupation occupation1 = new OccupationPro("agriculteur");
 		occupation1.setActive(true);
+		System.out.println(occupation1.decrire() + " " + occupation1.isActive());
+		
 		StyleVie styleVie1 = new StyleVie(
 				new SeNourrir(new Viande()),
 				occupation1,

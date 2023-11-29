@@ -5,13 +5,14 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-import tp.dessin.fig.AbstractFigVisitor;
+import tp.dessin.fig.AbstractFigVisitorV2;
 import tp.dessin.fig.Cercle;
 import tp.dessin.fig.Figure;
 import tp.dessin.fig.Ligne;
 import tp.dessin.fig.Rectangle;
 
-public class SwingDrawingVisitor implements AbstractFigVisitor {
+//public class SwingDrawingVisitor implements AbstractFigVisitor {
+public class SwingDrawingVisitor implements AbstractFigVisitorV2 {
 	
 	private Graphics g;
 	

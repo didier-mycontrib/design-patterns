@@ -2,12 +2,13 @@ package tp.dessin.ext.svg;
 
 import java.text.MessageFormat;
 
-import tp.dessin.fig.AbstractFigVisitor;
+import tp.dessin.fig.AbstractFigVisitorV2;
 import tp.dessin.fig.Cercle;
 import tp.dessin.fig.Ligne;
 import tp.dessin.fig.Rectangle;
 
-public class SvgGenerateVisitor implements AbstractFigVisitor {
+//public class SvgGenerateVisitor implements AbstractFigVisitor {
+public class SvgGenerateVisitor implements AbstractFigVisitorV2 {
 	
 	StringBuffer svgContent = new StringBuffer();
 	

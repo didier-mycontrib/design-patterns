@@ -1,0 +1,4 @@
+https://foad.ensicaen.fr/pluginfile.php/1214/course/section/635/gui-patterns.pdf
+https://www.codingninjas.com/studio/library/difference-between-mvc-mvp-and-mvvm-architecture-in-android
+https://www.geeksforgeeks.org/difference-between-mvp-and-mvvm-architecture-pattern-in-android/
+https://dev.to/vtsen/mvc-vs-mvp-vs-mvvm-design-patterns-443n

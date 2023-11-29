@@ -63,14 +63,14 @@ public class Ligne extends Figure{
 
 	@Override
 	public void performVisit(AbstractFigVisitor figVisitor) {
-		figVisitor.doActionForLigne(this);
+		((AbstractFigVisitorV2)figVisitor).doActionForLigne(this);
 	}
+	
 	
 	@Override
 	public Ligne clone() throws CloneNotSupportedException {   
 		return (Ligne)super.clone();
 	}
-
 
 
 	@Override
