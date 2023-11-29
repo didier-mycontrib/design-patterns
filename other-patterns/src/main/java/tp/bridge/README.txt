@@ -1,16 +1,19 @@
 StyleVie = classe regroupant l'association de 3 abstractions complémentaires :
-  - SeNourrir, Travailler , SeFairePlaisir
+  - SeNourrir, Occupation , SeFairePlaisir
   
 Implementations concrètes en arrière:
   - Alimentation( Omnivore , Vegetarien , ...)
   - Profession (Agriculteur, Informaticien, ...)
+  - TachePrivee
   - Loisir ( Ski , Baignade , ...)
   
 Et bridge/pont entre les deux :
-  - SeNourrirImpl --> Alimentation
-  - (Travailler ou GagnerSaVie)Impl --> Profession
-  - SeFairePlaisirImpl --> Loisir 
+  - SeNourrir --> Alimentation
+  - Occupation:
+     OccupationPro --> Profession
+     OccupationPriv --> TachePriv
+  - SeFairePlaisir --> Loisir 
   
 A faire en Tp :
-  1) modélisation UML
-  2) code java et test      
+  1) éventuelle modélisation UML
+  2) analyser code java et test      

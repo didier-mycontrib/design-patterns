@@ -1,6 +1,6 @@
 package tp.bridge.abstraction;
 
-import tp.bridge.implementor.Loisir;
+import tp.bridge.implementor.loisir.Loisir;
 
 public class SeFairePlaisir2 extends SeFairePlaisir {
 	private Loisir loisir2;

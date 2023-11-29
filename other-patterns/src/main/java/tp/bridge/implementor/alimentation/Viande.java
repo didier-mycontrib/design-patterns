@@ -1,4 +1,4 @@
-package tp.bridge.implementor;
+package tp.bridge.implementor.alimentation;
 
 public class Viande implements Alimentation{
 

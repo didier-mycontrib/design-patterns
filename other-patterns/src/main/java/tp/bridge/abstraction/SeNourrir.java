@@ -1,6 +1,6 @@
 package tp.bridge.abstraction;
 
-import tp.bridge.implementor.Alimentation;
+import tp.bridge.implementor.alimentation.Alimentation;
 
 public class SeNourrir {
 	private Alimentation alimentation;

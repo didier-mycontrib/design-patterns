@@ -1,4 +1,4 @@
-package tp.bridge.implementor;
+package tp.bridge.implementor.alimentation;
 
 public interface Alimentation {
 	public enum TypeAlimentation{ VEGETARIEN, OMNIVORE};

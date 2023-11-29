@@ -1,14 +1,15 @@
-package tp.bridge.implementor;
+package tp.bridge.implementor.loisir;
 
-public class Lecture implements Loisir{
+public class VisionnerFilm implements Loisir{
 
 	@Override
 	public String decrire() {
-		return "lire_livre_ou_BD";
+		return "visionner film";
 	}
-
+	
 	@Override
 	public TypeLoisir getType() {
 		return TypeLoisir.CULTUREL;
 	}
+
 }

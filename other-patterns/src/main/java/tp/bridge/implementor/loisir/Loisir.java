@@ -1,4 +1,4 @@
-package tp.bridge.implementor;
+package tp.bridge.implementor.loisir;
 
 public interface Loisir {
 	public enum TypeLoisir{ SPORTIF , CULTUREL };

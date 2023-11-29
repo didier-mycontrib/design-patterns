@@ -2,19 +2,19 @@ package tp.bridge;
 
 import tp.bridge.abstraction.SeFairePlaisir;
 import tp.bridge.abstraction.SeNourrir;
-import tp.bridge.abstraction.Travailler;
+import tp.bridge.abstraction.Occupation;
 
 //Bonne version de StyleVie avec abstractions complémentaires par facettes
 public class StyleVie {
 	private SeNourrir seNourrir;
-	private Travailler travailler;
+	private Occupation occupation;
 	private SeFairePlaisir seFairePlaisir;
 	
 	
 	
-	public StyleVie(SeNourrir seNourrir, Travailler travailler, SeFairePlaisir seFairePlaisir) {
+	public StyleVie(SeNourrir seNourrir, Occupation occupation, SeFairePlaisir seFairePlaisir) {
 		this.seNourrir = seNourrir;
-		this.travailler = travailler;
+		this.occupation = occupation;
 		this.seFairePlaisir = seFairePlaisir;
 	}
 	
@@ -25,7 +25,7 @@ public class StyleVie {
 	@Override
 	public String toString() {
 		return "StyleVie [" + seNourrir.toString() + " "  
-	                        + travailler.toString() + " " 
+	                        + occupation.toString() + " " 
 				            + seFairePlaisir.toString() + "]";
 	}
 	public SeNourrir getSeNourrir() {
@@ -34,11 +34,11 @@ public class StyleVie {
 	public void setSeNourrir(SeNourrir seNourrir) {
 		this.seNourrir = seNourrir;
 	}
-	public Travailler getTravailler() {
-		return travailler;
+	public Occupation getOccupation() {
+		return occupation;
 	}
-	public void setTravailler(Travailler travailler) {
-		this.travailler = travailler;
+	public void setOccupation(Occupation occupation) {
+		this.occupation = occupation;
 	}
 	public SeFairePlaisir getSeFairePlaisir() {
 		return seFairePlaisir;

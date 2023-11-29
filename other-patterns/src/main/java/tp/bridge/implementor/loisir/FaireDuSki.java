@@ -1,4 +1,6 @@
-package tp.bridge.implementor;
+package tp.bridge.implementor.loisir;
+
+import tp.bridge.implementor.loisir.Loisir.TypeLoisir;
 
 public class FaireDuSki implements Loisir{
 

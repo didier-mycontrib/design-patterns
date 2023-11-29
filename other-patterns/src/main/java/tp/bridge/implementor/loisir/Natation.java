@@ -1,4 +1,4 @@
-package tp.bridge.implementor;
+package tp.bridge.implementor.loisir;
 
 public class Natation implements Loisir{
 
