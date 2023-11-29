@@ -49,6 +49,10 @@ public class SimpleMenuBuilder {
 			totalPrice += simpleMenu.getDessert().getPrice();
 		if(simpleMenu.getDrink()!=null)
 			totalPrice += simpleMenu.getDrink().getPrice();
+		if(simpleMenu.getMainCourse()!=null)
+			totalPrice += simpleMenu.getMainCourse().getPrice();
+		if(simpleMenu.getStarter()!=null)
+			totalPrice += simpleMenu.getStarter().getPrice();
 		simpleMenu.setTotalPrice(totalPrice);
 		return simpleMenu;
 	}

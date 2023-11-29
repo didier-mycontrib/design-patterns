@@ -21,9 +21,10 @@ public class TestSimpleMenuBuilder {
 		
 		
 		SimpleMenu menu2 = SimpleMenu.builder()
+				   .drink(new Soda("CocaCola",3.0) )
 				   .mainCourse(new Burger("Maxi Beacon Burger",6.8))
 		           .dessert(new Icecream("lemon",2.5))
-		           .drink(new Soda("CocaCola",3.0) )
+		           
 		           .build();
         System.out.println("menu2="+menu2);
 	}
