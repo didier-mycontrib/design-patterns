@@ -18,7 +18,7 @@ public class OccupationPriv extends Occupation{
 	
 	@Override
 	public String toString() {
-		return "OccupationPriv [tachePrivee=" + this.decrire() + "]";
+		return "OccupationPriv [tachePrivee=" + this.description() + "]";
 	}
 
 	public TachePrivee getTachePrivee() {
@@ -30,7 +30,7 @@ public class OccupationPriv extends Occupation{
 	}
 
 	@Override
-	public String decrire() {
+	public String description() {
 		return (tachePrivee!=null)?tachePrivee.decrire():"";
 	}
 

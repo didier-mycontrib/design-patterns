@@ -24,11 +24,11 @@ public class TestBridge {
 		
 		Occupation occupation1 = new OccupationPro("agriculteur");
 		occupation1.setActive(true);
-		System.out.println("occupation1="+occupation1.decrire() + " active=" + occupation1.isActive());
+		System.out.println("occupation1="+occupation1.description() + " active=" + occupation1.isActive());
 		
 		Occupation occupation2 = new OccupationPriv("gerer enfants");
 		occupation2.setActive(true);
-		System.out.println("occupation2="+occupation2.decrire() + " active=" + occupation2.isActive());
+		System.out.println("occupation2="+occupation2.description() + " active=" + occupation2.isActive());
 		
 		StyleVie styleVie1 = new StyleVie(
 				new SeNourrir("viande"),

@@ -17,7 +17,7 @@ public class OccupationPro extends Occupation{
 
 	@Override
 	public String toString() {
-		return "OccupationPro [profession=" + this.decrire() + "]";
+		return "OccupationPro [profession=" + this.description() + "]";
 	}
 
 	public Profession getProfession() {
@@ -29,7 +29,7 @@ public class OccupationPro extends Occupation{
 	}
 
 	@Override
-	public String decrire() {
+	public String description() {
 		return (profession!=null)?profession.decrire():"null";
 	}
 

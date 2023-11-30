@@ -5,7 +5,7 @@ public abstract class Occupation {
 	
 	private boolean active;
 	
-	public abstract String decrire();
+	public abstract String description();
 
 
 	public Occupation() {
@@ -14,7 +14,7 @@ public abstract class Occupation {
 
 	@Override
 	public String toString() {
-		return decrire();
+		return description();
 	}
 
 
