@@ -1,12 +1,13 @@
 package tp.bridge.abstraction;
 
 import tp.bridge.implementor.alimentation.Alimentation;
+import tp.bridge.implementor.alimentation.AlimentationFactory;
 
 public class SeNourrir {
 	private Alimentation alimentation;
 
-	public SeNourrir(Alimentation alimentation) {
-		this.alimentation = alimentation;
+	public SeNourrir(String TypeAlimentation) {
+		this.alimentation = AlimentationFactory.createAlimentation(TypeAlimentation);
 	}
 	
 	public SeNourrir() {

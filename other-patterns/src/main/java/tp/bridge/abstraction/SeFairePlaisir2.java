@@ -1,16 +1,17 @@
 package tp.bridge.abstraction;
 
 import tp.bridge.implementor.loisir.Loisir;
+import tp.bridge.implementor.loisir.LoisirFactory;
 
 public class SeFairePlaisir2 extends SeFairePlaisir {
 	private Loisir loisir2;
 	
-	public SeFairePlaisir2(Loisir loisir,Loisir loisir2) {
-		super(loisir);
-		this.loisir2 = loisir2;
+	public SeFairePlaisir2(String typeLoisir,String typeLoisir2) {
+		super(typeLoisir);
+		this.loisir2 = LoisirFactory.createLoisir(typeLoisir2);
 	}
-	public SeFairePlaisir2(Loisir loisir) {
-		this(loisir,null);
+	public SeFairePlaisir2(String typeLoisir) {
+		this(typeLoisir,null);
 	}
 	
 	public SeFairePlaisir2() {

@@ -5,7 +5,7 @@ public class FaireMenage extends TachePrivee {
 	
 
 	public FaireMenage() {
-		super();
+		this(true,30);//30mn par defaut
 	}
 
 	public FaireMenage(boolean active, Integer duree) {

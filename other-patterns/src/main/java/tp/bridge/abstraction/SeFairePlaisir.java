@@ -1,12 +1,13 @@
 package tp.bridge.abstraction;
 
 import tp.bridge.implementor.loisir.Loisir;
+import tp.bridge.implementor.loisir.LoisirFactory;
 
 public class SeFairePlaisir {
 	private Loisir loisir;
 	
-	public SeFairePlaisir(Loisir loisir) {
-		this.loisir = loisir;
+	public SeFairePlaisir(String  typeLoisir) {
+		this.loisir = LoisirFactory.createLoisir(typeLoisir);
 	}
 	
 	public SeFairePlaisir() {

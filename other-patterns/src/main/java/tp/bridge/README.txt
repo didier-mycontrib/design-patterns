@@ -4,8 +4,8 @@ StyleVie = classe regroupant l'association de 3 abstractions complémentaires :
 Implementations concrètes en arrière:
   - Alimentation( Omnivore , Vegetarien , ...)
   - Profession (Agriculteur, Informaticien, ...)
-  - TachePrivee
-  - Loisir ( Ski , Baignade , ...)
+  - TachePrivee (FaireMenage, GererEnfants, ...)
+  - Loisir ( Ski , Baignade , Lecture, ...)
   
 Et bridge/pont entre les deux :
   - SeNourrir --> Alimentation
