@@ -1,4 +1,4 @@
-package tp.interpreter;
+package tp.interpreter.v1;
 
 //Un arbre binaire est un cas pariculier d'arbre
 //où chaque noeud comporte au maximum 2 fils

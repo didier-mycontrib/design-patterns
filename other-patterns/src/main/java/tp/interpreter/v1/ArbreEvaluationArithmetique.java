@@ -1,4 +1,4 @@
-package tp.interpreter;
+package tp.interpreter.v1;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
