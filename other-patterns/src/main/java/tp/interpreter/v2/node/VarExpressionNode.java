@@ -37,6 +37,12 @@ public class VarExpressionNode extends AbstractExpressionNode{
 	public void setVarName(String varName) {
 		this.varName = varName;
 	}
+
+	@Override
+	public void dumpAST(String prefix) {
+		System.out.println(prefix  + "var("+varName+")");
+		
+	}
 	
 	
 

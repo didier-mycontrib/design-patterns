@@ -13,4 +13,6 @@ public abstract class AbstractExpressionNode implements ExpressionNode{
 		this.subExpression = subExpression;
 	}
 	
+	public abstract void dumpAST(String prefix);//display all expression tree in console for debug (verify structure)
+	
 }

@@ -5,6 +5,8 @@ import java.awt.HeadlessException;
 
 import javax.swing.JFrame;
 
+import tp.interpreter.v2.DrawingPanel;
+
 public class DecorMainWindowApp  extends JFrame{
 	
 	PanelWithDecor panel = new PanelWithDecor();

@@ -38,5 +38,10 @@ public class NumericExpressionNode extends AbstractExpressionNode{
 		this.numericValue = numericValue;
 	}
 
+	@Override
+	public void dumpAST(String prefix) {
+		System.out.println(prefix  + "num("+numericValue+")");
+		
+	}
 
 }
