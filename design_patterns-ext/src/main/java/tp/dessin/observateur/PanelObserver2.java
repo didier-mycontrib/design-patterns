@@ -10,8 +10,13 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class PanelObserver2 extends JPanel implements Observer{
-//public class PanelObserver2 extends JPanel implements IObserver{ //VERSION1 "maison"
+/*
+NB: l'interface Observer est une interface prédéfinie de Java qui permet de créer des objets observateurs.
+    Elle est devenue obsolète dans Java 9 .
+ */
+
+//public class PanelObserver2 extends JPanel implements Observer{
+public class PanelObserver2 extends JPanel implements IObserver{ //VERSION1 "maison"
 
 	
 	private SubjectWithCommonData subjectWithCommonData;
@@ -32,9 +37,8 @@ public class PanelObserver2 extends JPanel implements Observer{
 	}
 
 	@Override
-	//public void update() { // version "simple" "maison"
-	public void update(Observable o, Object arg) {	
-		//arg est une éventelle indication et o peut être "casté" en "subjectWithCommonData"
+	public void update() { // version "simple" "maison"
+	//public void update(Observable o, Object arg) { // ancienne version java.util.Observable deprecated
 		txtCouleur.setText(subjectWithCommonData.getCommonData());		
 	}
 

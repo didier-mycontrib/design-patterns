@@ -1,9 +1,10 @@
 package tp.dessin.observateur;
 
-import java.util.Observable; //version prédéfinie / standard "java" de AbstractSubject
+//NB: java.util.Observable est devenu obsolète dans Java 9
 
-// public class SubjectWithCommonData extends AbstractSubject { // VERSION1 "MAISON"
-public class SubjectWithCommonData extends Observable {
+
+public class SubjectWithCommonData extends AbstractObservableSubject { // VERSION1 "MAISON"
+// public class SubjectWithCommonData extends Observable {
 	
 	private String commonData;
 
@@ -13,7 +14,7 @@ public class SubjectWithCommonData extends Observable {
 
 	public void setCommonData(String commonData) {
 		this.commonData = commonData;
-		this.setChanged();//en version java.util.Observable seulement (pas en version "maison"/AbstractSubject)
+		//this.setChanged();//en version java.util.Observable seulement (pas en version "maison"/AbstractSubject)
 		this.notifyObservers();
 		//avertir tous les observateurs qu'un changement a été effectué
 		// et INDIRECTEMENT DECLENCHER DES mises à jour

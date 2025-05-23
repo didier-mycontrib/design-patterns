@@ -8,8 +8,13 @@ import java.util.Observer;  //version prédéfinie "java"
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 
-public class PanelObserver1 extends JPanel implements Observer{
-//public class PanelObserver1 extends JPanel implements IObserver{ //VERSION1 "maison"
+/*
+NB: l'interface Observer est une interface prédéfinie de Java qui permet de créer des objets observateurs.
+    Elle est devenue obsolète dans Java 9 .
+ */
+
+//public class PanelObserver1 extends JPanel implements Observer{
+public class PanelObserver1 extends JPanel implements IObserver{ //VERSION1 "maison"
 	
 	private SubjectWithCommonData subjectWithCommonData;
 
@@ -42,8 +47,8 @@ public class PanelObserver1 extends JPanel implements Observer{
 	}
 
 	//@Override
-	//public void update() { // version "simple" "maison"
-	public void update(Observable o, Object arg) {
+	public void update() { // version "simple" "maison"
+	//public void update(Observable o, Object arg) {
 		//arg est une éventelle indication et o peut être "casté" en "subjectWithCommonData"
 		String couleur = subjectWithCommonData.getCommonData();
 		comboCouleur.setSelectedItem(couleur);	
